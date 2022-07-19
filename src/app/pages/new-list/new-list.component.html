@@ -1,0 +1,19 @@
+<div class="centered-content">
+    <div class="model-box">
+        <h1 class="title">
+            Create a new list
+        </h1>
+
+        <input #listTitleInput class="input has-background-light is-medium" type="text" placeholder="Create a new list...">
+
+        <div class="buttons is-right" style="margin-top: 15px;">
+            <div class="button is-primary is-medium has-text-white" routerLink="/">
+                CANCEL
+            </div>
+            
+            <div class="button is-primary is-medium has-text-white" (click)="createList(listTitleInput.value)">
+                CREATE
+            </div>
+        </div>
+    </div>
+</div>

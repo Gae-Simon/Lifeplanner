@@ -8,20 +8,17 @@
             </h1>
 
             <div class="list-menu">
-                <a class="list-menu-item">
-                    List #1
+  
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+                    <p>
+                        {{ list.title }}
+                    </p>
                 </a>
+                
 
-                <a class="list-menu-item">
-                    List #2
-                </a>
-
-                <a class="list-menu-item">
-                    List #3
-                </a>
             </div>
 
-            <button class="button is-primary has-text-white">
+            <button class="button is-primary has-text-white" routerLink="/new-list">
                 + New List
             </button>
 
@@ -34,15 +31,9 @@
             </h1>
 
             <!--- Tasks Elements -->
-            <p class="task">
-                Do that!
-            </p>
-            <p class="task">
-                Do that!
-            </p>
-            <p class="task complete">
-                Do that!
-            </p>
+            <div class="task" *ngFor="let task of tasks">
+                <p> {{task.title}} </p>
+            </div>
         </div>
 
     </div>
