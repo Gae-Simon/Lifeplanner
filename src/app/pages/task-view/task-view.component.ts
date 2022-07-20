@@ -59,6 +59,25 @@ export class TaskViewComponent implements OnInit {
     });
   }
 
+  taskDelete(task: any){
+    this.taskService.deleteTask(task).subscribe(() => {
+
+      this.route.params.subscribe(
+        (params: any) => {
+          if (params.listId) {
+            this.selectedListId = params.listId;
+            this.taskService.getTasks(params.listId).subscribe((tasks: any) => {
+              this.tasks = tasks;
+            })
+          } else {
+            this.tasks = undefined;
+          }
+        }
+      );
+      
+    })
+  }
+
   
 
 }

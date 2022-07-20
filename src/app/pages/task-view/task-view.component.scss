@@ -73,9 +73,13 @@
 
 .task {
     background-color: $white;
-    padding: 15px 20px;
+    padding: 20px;
     border-radius: 5px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 
     &:not(.complete){
         cursor: pointer;
@@ -108,10 +112,10 @@
 }
 
 .icon {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    display: flex;
+    flex-direction: row;
 }
-
-
 
 

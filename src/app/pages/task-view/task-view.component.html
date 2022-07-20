@@ -32,9 +32,19 @@
             </h1>
 
             <!--- Tasks Elements -->
+            
             <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
                 <p> {{task.title}} </p>
+                    
+                
+                <button class="button is-primary" (click)="taskDelete(task)">
+                    <img class="icon" src="../../../assets/mull.png" (click)="taskDelete(task)">  
+                </button>
+
             </div>
+
+            
+            
 
             <button class="circle-add-task button is-primary" routerLink="./new-task">
                 <img routerLink="./new-task" src="../../../assets/plus.png">
