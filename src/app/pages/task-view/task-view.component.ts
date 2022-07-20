@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { List } from 'src/app/models/list.model';
 import { TaskService } from 'src/app/task.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class TaskViewComponent implements OnInit {
   lists: any;
   tasks: any;
 
-  selectedListId: any;
+  selectedListId: String;
 
 
   constructor(private route: ActivatedRoute, private taskService: TaskService) { }
@@ -35,6 +36,27 @@ export class TaskViewComponent implements OnInit {
       this.lists = lists;
     });
     
+  }
+
+  onTaskClick(task: any){
+    // We want set the task to completed
+    this.taskService.complete(task).subscribe(() => {
+      // then task has been set to completed successfully
+      task.completed = !task.completed;
+    })
+  }
+
+  listDelete(listId: any){
+    // We want to delete the list
+    this.taskService.deleteList(listId).subscribe(() => {
+
+      this.taskService.getLists().subscribe((lists: any) => {
+        this.lists = lists;
+      });
+      
+      this.tasks = [];
+
+    });
   }
 
   

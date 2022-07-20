@@ -13,6 +13,7 @@
                     <p>
                         {{ list.title }}
                     </p>
+                    <img class="icon" src="../../../assets/mull.png" (click)="listDelete(list._id)">
                 </a>
                 
 
@@ -31,7 +32,7 @@
             </h1>
 
             <!--- Tasks Elements -->
-            <div class="task" *ngFor="let task of tasks">
+            <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
                 <p> {{task.title}} </p>
             </div>
 

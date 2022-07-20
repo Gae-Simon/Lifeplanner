@@ -46,10 +46,12 @@
     .list-menu-item {
         
         display: flex;
+        flex-direction: row;
 
         align-items: center;
         padding: 10px 15px;
         border-radius: 5px;
+        justify-content: space-between;
 
         width: 100%;
         color: $light-background-color;
@@ -64,6 +66,8 @@
             color: $dark-green;
         }
     }
+
+    
 
 }
 
@@ -88,7 +92,7 @@
         }
     }
 
-    &.complete {
+    &.completed {
         text-decoration: line-through;
         opacity: 0.8;
     }
@@ -102,5 +106,12 @@
     bottom: 35px;
     right: 35px;
 }
+
+.icon {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+
 
 
