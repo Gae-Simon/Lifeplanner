@@ -1,0 +1,19 @@
+<div class="centered-content">
+    <div class="model-box">
+        <h1 class="title">
+            Update the selected task
+        </h1>
+
+        <input #taskTitleUpdate class="input has-background-light is-medium" type="text" value={{currentTitle}}>
+
+        <div class="buttons is-right" style="margin-top: 15px;">
+            <div class="button is-primary is-medium has-text-white" routerLink="../../">
+                CANCEL
+            </div>
+            
+            <div class="button is-primary is-medium has-text-white" (click)="editTask(taskTitleUpdate.value)">
+                UPDATE
+            </div>
+        </div>
+    </div>
+</div>

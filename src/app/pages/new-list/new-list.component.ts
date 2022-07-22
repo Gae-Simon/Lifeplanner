@@ -12,6 +12,7 @@ export class NewListComponent implements OnInit {
   constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   createList(title: string){

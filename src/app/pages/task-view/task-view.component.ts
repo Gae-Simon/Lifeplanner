@@ -78,10 +78,7 @@ export class TaskViewComponent implements OnInit {
     })
   }
 
-  editTask(task: any){
-    
-  }
-
+ 
   
 
 }

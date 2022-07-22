@@ -38,8 +38,8 @@
                     
                 
                 <div class="icon-container">
-                    <button class="icon-button button is-primary" (click)="taskDelete(task)">
-                        <img class="icon" src="../../../assets/bearbeiten.png" (click)="editTask(task)">  
+                    <button class="icon-button button is-primary" [routerLink]="[task._id, 'update-task']">
+                        <img class="icon" src="../../../assets/bearbeiten.png" [routerLink]="[task._id, '/update-task']">  
                     </button>
     
     

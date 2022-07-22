@@ -27,8 +27,12 @@ export class NewTaskComponent implements OnInit {
 
   createTask(title: string){
     this.taskService.createTask(title, this.listId).subscribe(() => {
-        this.router.navigate(['../'], { relativeTo: this.route});
+      this.navigateBack();
     })
+  }
+
+  navigateBack(){
+    this.router.navigate(['/lists', this.listId]);
   }
 
 }

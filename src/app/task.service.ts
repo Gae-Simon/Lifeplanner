@@ -25,6 +25,10 @@ export class TaskService {
     return this.webReqService.get(`lists/${listId}/tasks`)
   }
 
+  getTask(listId: string, taskId: string){
+    return this.webReqService.get(`lists/${listId}/tasks/${taskId}`)
+  }
+
   createTask(title: String, listId: String){
     // We want to call the http request to create a new task
     return this.webReqService.post(`lists/${listId}/tasks`, { title });
@@ -37,6 +41,11 @@ export class TaskService {
   deleteTask(task: any){
     return this.webReqService.delete(`lists/${task._listId}/tasks/${task._id}`)
   }
+
+  editTask(listId: string, id: string, newTitle: string){
+    return this.webReqService.patch(`lists/${listId}/tasks/${id}`, { title: newTitle})
+  }
+
 
 
 }
