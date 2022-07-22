@@ -1,58 +1,84 @@
-<div class="centered-content">
-    <div class="task-mangager-container">
-
-        <div class="sidebar has-background-white">
-
-            <h1 class="title has-text-primary">
-                Lists
-            </h1>
-
-            <div class="list-menu">
-  
-                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
-                    <p>
-                        {{ list.title }}
-                    </p>
-                    <img class="icon" src="../../../assets/mull.png" (click)="listDelete(list._id)">
-                </a>
-                
-
-            </div>
-
-            <button class="button is-primary has-text-white" routerLink="/new-list">
-                + New List
-            </button>
-
-        </div>
-
-        <div class="task-list-container">
-
-            <h1 class="title has-text-primary">
-                Tasks
-            </h1>
-
-            <!--- Tasks Elements -->
-            
-            <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
-                <p> {{task.title}} </p>
+<div class="screen">
+    <div class="centered-content">
+        <div class="task-mangager-container">
+    
+            <div class="sidebar has-background-white">
+    
+                <h1 class="title has-text-primary">
+                    Lists
+                </h1>
+    
+                <div class="list-menu">
+      
+                    <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/task-manager/lists', list._id]" routerLinkActive="is-active">
+                        <p>
+                            {{ list.title }}
+                        </p>
+                        <img class="icon" src="../../../assets/mull.png" (click)="listDelete(list._id)">
+                    </a>
                     
-                
-                <div class="icon-container">
-                    <button class="icon-button button is-primary" [routerLink]="[task._id, 'update-task']">
-                        <img class="icon" src="../../../assets/bearbeiten.png" [routerLink]="['./', task._id, 'update-task']">  
-                    </button>
     
-    
-                    <button class="icon-button button is-primary" (click)="taskDelete(task)">
-                        <img class="icon" src="../../../assets/mull.png" (click)="taskDelete(task)">  
-                    </button>
                 </div>
+    
+                <button class="button is-primary has-text-white" routerLink="/task-manager/new-list">
+                    + New List
+                </button>
+    
             </div>
-
-            <button class="circle-add-task button is-primary" routerLink="./new-task">
-                <img routerLink="./new-task" src="../../../assets/plus.png">
-            </button>
+    
+            <div class="task-list-container">
+    
+                <h1 class="title has-text-primary">
+                    Tasks
+                </h1>
+    
+                <!--- Tasks Elements -->
+                
+                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+                    <p> {{task.title}} </p>
+                        
+                    
+                    <div class="icon-container">
+                        <button class="icon-button button is-primary" [routerLink]="[task._id, 'update-task']">
+                            <img class="icon" src="../../../assets/bearbeiten.png" [routerLink]="['./', task._id, 'update-task']">  
+                        </button>
+        
+        
+                        <button class="icon-button button is-primary" (click)="taskDelete(task)">
+                            <img class="icon" src="../../../assets/mull.png" (click)="taskDelete(task)">  
+                        </button>
+                    </div>
+                </div>
+    
+                <button class="circle-add-task button is-primary" routerLink="./new-task">
+                    <img routerLink="./new-task" src="../../../assets/plus.png">
+                </button>
+            </div>
+    
         </div>
+    </div>
+    
+    <div class="menubar">
+        <div class="menubar-split">
+            <h1 class="headline has-text-primary">
+                LIFEPLANNER
+            </h1>
 
+            <img class="logo" src="../../../assets/personliche-entwicklung.png">
+
+            <button class="menu-item button has-text-primary" routerLink="/task-manager/lists">
+                TASK MANAGER
+            </button>
+
+            <button class="menu-item button has-text-primary" routerLink="/boosted">
+                BOOSTED
+            </button>
+
+            <button class="menu-item button has-text-primary">
+                NOTES
+            </button>
+
+        </div>
+       
     </div>
 </div>

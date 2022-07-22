@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewListComponent } from './pages/new-list/new-list.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { BoostedComponent } from './pages/boosted/boosted.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
     TaskViewComponent,
     NewListComponent,
     NewTaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    BoostedComponent
   ],
   imports: [
     BrowserModule,

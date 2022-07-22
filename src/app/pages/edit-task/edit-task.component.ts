@@ -38,7 +38,7 @@ export class EditTaskComponent implements OnInit {
   }
 
   navigateBack(){
-    this.router.navigate(['/lists', this.listId]);
+    this.router.navigate(['/task-manager/lists', this.listId]);
   }
 
 
