@@ -1,1 +1,50 @@
 @import '../../../main-styles';
+
+
+.notes-headline {
+    font-family: 'Lato';
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 35px;
+}
+
+.notes-header{
+    display: flex;
+    background-color: $white;
+    height: 20%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.notes-body{
+    display: flex;
+    background-color: $light;
+    height: 80%;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.notes-manager-contianer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 680px;
+}
+
+.grid-container {
+    display: grid;
+    gap: 50px;
+    padding: 30px;
+    grid-template-columns: auto auto auto;
+}
+
+.notes-item {
+   justify-items: center;
+   align-items: center; 
+   background-color: red;
+}
