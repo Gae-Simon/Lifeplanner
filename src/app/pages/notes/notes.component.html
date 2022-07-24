@@ -5,12 +5,15 @@
                 <h1 class="notes-headline has-text-primary">
                     NOTES
                 </h1>
+                <button class="button is-primary has-text-white">
+                    Create new note
+                </button>
             </div>
             <div class="notes-body">
                 <div class="grid-container">
-                    <div class="notes-item">
+                    <div class="notes-item" *ngFor="let note of notes">
                         <h1 class="notes-headline has-text-primary">
-                            NOTES
+                            {{ note.title }}
                         </h1>
                     </div>
                 </div>

@@ -8,44 +8,62 @@ export class TaskService {
 
   constructor(private webReqService: WebRequestService) { }
 
+/*
+*
+* ------------ API FOR TASKS ------------
+* /task-manager/***
+*
+*/
+
   getLists(){
-    return this.webReqService.get('lists');
+    return this.webReqService.get('task-manager/lists');
   }
 
   createList(title: String){
     // We want to call the http request to create a new list
-    return this.webReqService.post('lists', { title });
+    return this.webReqService.post('task-manager/lists', { title });
   }
 
   deleteList(listId: String){
-    return this.webReqService.delete(`lists/${listId}`)
+    return this.webReqService.delete(`task-manager/lists/${listId}`)
   }
 
   getTasks(listId: string){
-    return this.webReqService.get(`lists/${listId}/tasks`)
+    return this.webReqService.get(`task-manager/lists/${listId}/tasks`)
   }
 
   getTask(listId: string, taskId: string){
-    return this.webReqService.get(`lists/${listId}/tasks/${taskId}`)
+    return this.webReqService.get(`task-manager/lists/${listId}/tasks/${taskId}`)
   }
 
   createTask(title: String, listId: String){
     // We want to call the http request to create a new task
-    return this.webReqService.post(`lists/${listId}/tasks`, { title });
+    return this.webReqService.post(`task-manager/lists/${listId}/tasks`, { title });
   }
 
   complete(task: any){
-    return this.webReqService.patch(`lists/${task._listId}/tasks/${task._id}`, { completed: !task.completed})
+    return this.webReqService.patch(`task-manager/lists/${task._listId}/tasks/${task._id}`, { completed: !task.completed})
   }
 
   deleteTask(task: any){
-    return this.webReqService.delete(`lists/${task._listId}/tasks/${task._id}`)
+    return this.webReqService.delete(`task-manager/lists/${task._listId}/tasks/${task._id}`)
   }
 
   editTask(listId: string, id: string, newTitle: string){
-    return this.webReqService.patch(`lists/${listId}/tasks/${id}`, { title: newTitle})
+    return this.webReqService.patch(`task-manager/lists/${listId}/tasks/${id}`, { title: newTitle})
   }
 
+
+/*
+*
+* ------------ API FOR NOTES ------------
+* /notes/***
+*
+*/
+
+  loadNotes(){
+    return this.webReqService.get('notes/note-collection');
+  }
 
 
 }

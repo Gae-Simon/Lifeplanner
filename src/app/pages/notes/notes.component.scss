@@ -6,7 +6,6 @@
     font-size: 35px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 35px;
 }
 
 .notes-header{
@@ -16,6 +15,9 @@
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
 }
 
 .notes-body{
@@ -44,7 +46,10 @@
 }
 
 .notes-item {
-   justify-items: center;
-   align-items: center; 
-   background-color: red;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 25px;
+    background-color: $white;
+    max-height: 150px;
 }
