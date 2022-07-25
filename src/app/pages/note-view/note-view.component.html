@@ -2,20 +2,16 @@
     <div class="centered-content">
         <div class="notes-manager-contianer">
             <div class="notes-header">
-                <h1 class="notes-headline has-text-primary">
-                    NOTES
+                <h1 class="notes-headline has-text-primary" *ngIf="note">
+                    {{ note.title }}
                 </h1>
-                <button class="button is-primary has-text-white">
-                    Create new note
+                <button class="button is-primary has-text-white" (click)="updateNote(note, InputTextArea.value)">
+                    Save
                 </button>
             </div>
             <div class="notes-body">
-                <div class="grid-container">
-                    <div class="notes-item" *ngFor="let note of notes" [routerLink]="['./', note._id]">
-                        <h1 class="title" >
-                            {{ note.title }}
-                        </h1>
-                    </div>
+                <div class="content-container">
+                    <textarea #InputTextArea class="textarea is-primary" value={{note.content}} ></textarea>
                 </div>
             </div>
         </div>

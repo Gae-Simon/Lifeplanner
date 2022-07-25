@@ -65,5 +65,13 @@ export class TaskService {
     return this.webReqService.get('notes/note-collection');
   }
 
+  loadNote(noteId: string){
+    return this.webReqService.get(`notes/note-collection/${noteId}`)
+  }
+
+  updateNote(noteId: string, newContent: string){
+    return this.webReqService.patch(`notes/note-collection/${noteId}`, { content: newContent})
+  }
+
 
 }

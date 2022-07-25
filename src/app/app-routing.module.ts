@@ -4,6 +4,7 @@ import { BoostedComponent } from './pages/boosted/boosted.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { NewListComponent } from './pages/new-list/new-list.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
+import { NoteViewComponent } from './pages/note-view/note-view.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
 
 {path: 'boosted', component: BoostedComponent},
 
-{path: 'notes', component: NotesComponent}
+{path: 'notes', component: NotesComponent},
+{path: 'notes/:noteId', component: NoteViewComponent}
 
 
 ];

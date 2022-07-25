@@ -11,6 +11,8 @@ import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { BoostedComponent } from './pages/boosted/boosted.component';
 import { NotesComponent } from './pages/notes/notes.component';
+import { NoteViewComponent } from './pages/note-view/note-view.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NotesComponent } from './pages/notes/notes.component';
     NewTaskComponent,
     EditTaskComponent,
     BoostedComponent,
-    NotesComponent
+    NotesComponent,
+    NoteViewComponent,
   ],
   imports: [
     BrowserModule,
