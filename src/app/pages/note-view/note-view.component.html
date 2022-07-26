@@ -5,9 +5,19 @@
                 <h1 class="notes-headline has-text-primary" *ngIf="note">
                     {{ note.title }}
                 </h1>
-                <button class="button is-primary has-text-white" (click)="updateNote(note, InputTextArea.value)">
-                    Save
-                </button>
+                <div class="saved">
+                    <img class="icon" src="../../../assets/comment-check-kostenloser-iconfont.png" [ngClass]="{'completed': completed}">
+                    <p class="note-text" [ngClass]="{'completed': completed}">
+                        Saved successfully!
+                    </p>
+
+                    <button class="button is-primary has-text-white" (click)="updateNote(note, InputTextArea.value)">
+                        Save
+                    </button>
+                </div>
+                
+
+                
             </div>
             <div class="notes-body">
                 <div class="content-container">

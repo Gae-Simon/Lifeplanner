@@ -13,6 +13,7 @@ export class NoteViewComponent implements OnInit {
 
   note: any;
   noteId: string;
+  completed: boolean | false;
 
   ngOnInit(): void {
     this.loadNote();
@@ -20,8 +21,11 @@ export class NoteViewComponent implements OnInit {
 
   updateNote(note: any, newContent: string){
     this.taskService.updateNote(note._id, newContent).subscribe(() => {
+      this.completed = true;
       this.loadNote();
     });
+
+    
   }
 
 
@@ -38,5 +42,7 @@ export class NoteViewComponent implements OnInit {
     });
 
   }
+
+
 
 }
