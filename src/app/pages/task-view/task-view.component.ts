@@ -71,7 +71,7 @@ export class TaskViewComponent implements OnInit {
     this.router.navigate(['../']);
   }
 
- 
+
   
 
 }
