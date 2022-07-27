@@ -113,6 +113,7 @@
 
 .icon-button{
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .task-manager-contianer {
@@ -121,5 +122,10 @@
     height: 100%;
     max-width: 1000px;
     max-height: 680px;
+}
+
+.text {
+    font-family: 'Lato';
+    font-style: bold;
 }
 

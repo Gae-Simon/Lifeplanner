@@ -36,9 +36,9 @@ export class TaskService {
     return this.webReqService.get(`task-manager/lists/${listId}/tasks/${taskId}`)
   }
 
-  createTask(title: String, listId: String){
+  createTask(newTitle: String, listId: String, newDescription: string){
     // We want to call the http request to create a new task
-    return this.webReqService.post(`task-manager/lists/${listId}/tasks`, { title });
+    return this.webReqService.post(`task-manager/lists/${listId}/tasks`, { title : newTitle, created: new Date(), description: newDescription });
   }
 
   complete(task: any){

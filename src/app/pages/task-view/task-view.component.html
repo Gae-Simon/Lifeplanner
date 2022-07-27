@@ -34,10 +34,9 @@
     
                 <!--- Tasks Elements -->
                 
-                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
-                    <p> {{task.title}} </p>
-                        
-                    
+                <div class="task" *ngFor="let task of tasks" [routerLink]="['./', task._id]">
+                    <p class="text"> {{task.title}} </p>
+
                     <div class="icon-container">
                         <button class="icon-button button is-primary" [routerLink]="[task._id, 'update-task']">
                             <img class="icon" src="../../../assets/bearbeiten.png" [routerLink]="['./', task._id, 'update-task']">  

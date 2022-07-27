@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from 'src/app/task.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class TaskViewComponent implements OnInit {
   selectedListId: String;
 
 
-  constructor(private route: ActivatedRoute, private taskService: TaskService) { }
+  constructor(private route: ActivatedRoute, private taskService: TaskService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -35,14 +35,6 @@ export class TaskViewComponent implements OnInit {
       this.lists = lists;
     });
     
-  }
-
-  onTaskClick(task: any){
-    // We want set the task to completed
-    this.taskService.complete(task).subscribe(() => {
-      // then task has been set to completed successfully
-      task.completed = !task.completed;
-    })
   }
 
   listDelete(listId: any){
@@ -75,6 +67,8 @@ export class TaskViewComponent implements OnInit {
       );
       
     })
+
+    this.router.navigate(['../']);
   }
 
  

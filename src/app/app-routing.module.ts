@@ -7,6 +7,7 @@ import { NewNoteComponent } from './pages/new-note/new-note.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { NoteViewComponent } from './pages/note-view/note-view.component';
 import { NotesComponent } from './pages/notes/notes.component';
+import { TaskOverviewComponent } from './pages/task-overview/task-overview.component';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path: 'task-manager/lists', component: TaskViewComponent},
 {path: 'task-manager/lists/:listId/new-task', component: NewTaskComponent},
 {path: 'task-manager/lists/:listId/:taskId/update-task', component: EditTaskComponent},
+{path: 'task-manager/lists/:listId/:taskId', component: TaskOverviewComponent},
 
 {path: 'boosted', component: BoostedComponent},
 

@@ -1,0 +1,21 @@
+@import '../../../main-styles';
+
+.datepicker {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.description {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    font-style: bold;
+    font-family: 'Lato';
+    font-size: 17px;
+}

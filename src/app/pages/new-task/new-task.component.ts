@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Task } from 'src/app/models/task.model';
 import { TaskService } from 'src/app/task.service';
+
 
 @Component({
   selector: 'app-new-task',
@@ -25,8 +25,8 @@ export class NewTaskComponent implements OnInit {
 
   }
 
-  createTask(title: string){
-    this.taskService.createTask(title, this.listId).subscribe(() => {
+  createTask(title: string, desciption: string){
+    this.taskService.createTask(title, this.listId, desciption).subscribe(() => {
       this.navigateBack();
     })
   }
