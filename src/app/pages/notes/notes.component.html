@@ -5,13 +5,13 @@
                 <h1 class="notes-headline has-text-primary">
                     NOTES
                 </h1>
-                <button class="button is-primary has-text-white">
+                <button class="button is-primary has-text-white" routerLink="./new-note">
                     Create new note
                 </button>
             </div>
             <div class="notes-body">
                 <div class="grid-container">
-                    <div class="notes-item" *ngFor="let note of notes" [routerLink]="['./', note._id]">
+                    <div class="notes-item" *ngFor="let note of notes" [routerLink]="['./note/', note._id]">
                         <h1 class="title" >
                             {{ note.title }}
                         </h1>

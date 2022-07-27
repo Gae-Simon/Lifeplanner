@@ -73,5 +73,9 @@ export class TaskService {
     return this.webReqService.patch(`notes/note-collection/${noteId}`, { content: newContent})
   }
 
+  createNote(title: string){
+    return this.webReqService.post('notes/note-collection', {title : title})
+  }
+
 
 }

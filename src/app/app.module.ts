@@ -12,6 +12,7 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { BoostedComponent } from './pages/boosted/boosted.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { NoteViewComponent } from './pages/note-view/note-view.component';
+import { NewNoteComponent } from './pages/new-note/new-note.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { NoteViewComponent } from './pages/note-view/note-view.component';
     BoostedComponent,
     NotesComponent,
     NoteViewComponent,
+    NewNoteComponent,
   ],
   imports: [
     BrowserModule,
