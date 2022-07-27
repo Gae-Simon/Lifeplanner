@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from 'src/app/task.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { TaskService } from 'src/app/task.service';
 })
 export class NoteViewComponent implements OnInit {
 
-  constructor(private taskService: TaskService, private route: ActivatedRoute) { }
+  constructor(private taskService: TaskService, private route: ActivatedRoute, private router: Router) { }
 
   note: any;
   noteId: string;
@@ -23,9 +23,7 @@ export class NoteViewComponent implements OnInit {
     this.taskService.updateNote(note._id, newContent).subscribe(() => {
       this.completed = true;
       this.loadNote();
-    });
-
-    
+    });    
   }
 
 
@@ -41,6 +39,14 @@ export class NoteViewComponent implements OnInit {
       this.note = note;
     });
 
+  }
+
+  deleteNote(){
+    this.taskService.deleteNote(this.noteId).subscribe(() => {
+      this.loadNote();
+
+      this.router.navigate(['/notes'])
+    })
   }
 
 

@@ -77,5 +77,9 @@ export class TaskService {
     return this.webReqService.post('notes/note-collection', {title : title})
   }
 
+  deleteNote(noteId: string){
+    return this.webReqService.delete(`notes/note-collection/${noteId}`)
+  }
+
 
 }
